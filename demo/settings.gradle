@@ -1,0 +1,3 @@
+//parametrage global de l'environnement
+
+rootProject.name = 'demo'

@@ -1,0 +1,25 @@
+plugins { //coeur de springboot
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.cnam'
+version = '0.0.1-SNAPSHOT' //version de l'appli
+sourceCompatibility = '11' // version de java compatible à partir de la 11
+
+repositories {
+	mavenCentral() //où chercher les dépendances
+}
+
+dependencies { // les dpendances = librairies
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}
+
+tasks.named('test') { //lancer taches de test
+	useJUnitPlatform()
+}
